@@ -6,8 +6,7 @@ module.exports = function(grunt) {
         concat: {
             main: {
                 src: [
-                    'bower_components/jquery.easing/js/jquery.easing.js',
-                    'js/plugins/*.js',
+                    'js/*.js',
                     'js/<%= pkg.name %>.js'
                 ],
                 dest: 'dist/js/<%= pkg.name %>.js',
@@ -35,32 +34,6 @@ module.exports = function(grunt) {
                     dest: 'dist/js/'
                 }, ]
             },
-            bootstrap: {
-                files: [{
-                    expand: true,
-                    cwd: 'bower_components/bootstrap/dist/',
-                    src: [
-                        'css/bootstrap.css',
-                        'css/bootstrap.min.css',
-                        'js/bootstrap.js',
-                        'js/bootstrap.min.js'
-                    ],
-                    dest: 'dist/'
-                }, ]
-            },
-            glyphicons: {
-                files: [{
-                    expand: true,
-                    cwd: 'bower_components/bootstrap/dist/',
-                    src: [
-                        'fonts/glyphicons-halflings-regular.eot',
-                        'fonts/glyphicons-halflings-regular.svg',
-                        'fonts/glyphicons-halflings-regular.ttf',
-                        'fonts/glyphicons-halflings-regular.woff',
-                    ],
-                    dest: 'dist/'
-                }, ]
-            },
         },
         less: {
             expanded: {
@@ -68,7 +41,7 @@ module.exports = function(grunt) {
                     paths: ["css"]
                 },
                 files: {
-                    "dist/css/<%= pkg.name %>.css": "less/<%= pkg.name %>.less"
+                    "dist/css/<%= pkg.name %>.css": "less/*.less"
                 }
             },
             minified: {
@@ -77,7 +50,7 @@ module.exports = function(grunt) {
                     cleancss: true
                 },
                 files: {
-                    "dist/css/<%= pkg.name %>.min.css": "less/<%= pkg.name %>.less"
+                    "dist/css/<%= pkg.name %>.min.css": "less/*.less"
                 }
             }
         },
@@ -99,7 +72,7 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
-                files: ['js/<%= pkg.name %>.js, js/plugins/*.js'],
+                files: ['js/<%= pkg.name %>.js'],
                 tasks: ['concat', 'uglify'],
                 options: {
                     spawn: false,
