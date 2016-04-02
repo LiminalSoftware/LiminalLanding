@@ -128,6 +128,8 @@ var moveTo = function (pos) {
 	else newline.insertBefore(cursor, newline.childNodes[posCol])
 }
 
+
+
 var codeFrame = function (action) {
 	var cursor = document.getElementById('code-cursor');
 	var lines = container.childNodes;
@@ -136,7 +138,6 @@ var codeFrame = function (action) {
 	var word = words[posCol - 1];
 	var col = Math.min(posCol, words.length);
 	var direction = action === 'moveup' ? -1 : 1;
-
 	var rand = Math.random();
 	var nextAction;
 

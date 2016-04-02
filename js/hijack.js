@@ -1,7 +1,7 @@
 /*
  * global Modernizr 
  */
- 
+
 (function ($) {
 	'use strict';
 

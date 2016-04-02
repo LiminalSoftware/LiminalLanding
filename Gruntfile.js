@@ -72,14 +72,14 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
-                files: ['js/<%= pkg.name %>.js'],
+                files: ['js/*.js'],
                 tasks: ['concat', 'uglify'],
                 options: {
                     spawn: false,
                 },
             },
             copy: {
-                files: ['*.html', 'mail/**', 'img/**', 'less/**'],
+                files: ['*.html'],
                 tasks: ['copy'],
                 options: {
                     spawn: false,
